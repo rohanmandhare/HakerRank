@@ -1,0 +1,14 @@
+import java.util.*;
+import java.util.Scanner;
+
+public class Solution {
+  public static void main(String[] args){
+    Scanner input = new Scanner(System.in);
+    int b=1;
+    while(input.hasNext()){
+      String name = input.nextLine();
+      System.out.println(b+ " "+name);
+      b++;
+    }
+  }
+}
