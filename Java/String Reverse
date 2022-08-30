@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.util.*;
+import java.io.*;
+
+public class Solution{
+public static void main(String[] args){
+  Scanner input = new Scanner (System.in);
+  String str = input.nextLine();
+  String rev = "";
+  String res = "";
+  
+  for (int i=str.length()-1 ; i>=0 ; i--){
+    rev = str.valueOf(str.charAt(i));
+    res = res.concat(rev);
+  }
+  if(res.equals(str)){
+  System.out.println("Yes");
+  }
+  else{
+      System.out.println("No");
+  }
+}
+}
