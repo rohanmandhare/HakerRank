@@ -1,0 +1,14 @@
+import java.util.*;
+import java.util.Scanner;
+import java.io.*;
+
+public class Solution{
+public static void main(String[] args){
+  Scanner input = new Scanner(System.in);
+  String str = input.nextLine();
+  int beginindex = input.nextInt();
+  int endindex = input.nextInt();
+  String res = str.substring(beginindex , endindex);
+  System.out.println(res);
+}
+}
