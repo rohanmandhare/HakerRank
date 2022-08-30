@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+
+public class Solution{
+public static void main(String[] args){
+  Scanner input = new Scanner(System.in);
+  String str = input.nextLine();
+  int k = input.nextInt();
+  input.close();
+  
+  String smallest = str.substring(0,k);
+  String largest = str.substring(0 , k);
+  
+  for (int i=0 ; i<=str.length()-k ; i++){
+    String curr = str.substring(i , i+k);
+    if (smallest.compareTo(curr)>0)
+      smallest = curr;
+    if (largest.compareTo(curr)<0)
+      largest=curr;
+  }    
+    System.out.println(smallest);
+    System.out.println(largest);
+  
+ }
+}
