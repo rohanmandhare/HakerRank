@@ -1,0 +1,49 @@
+import java.util.*;
+import java.util.HashMap;
+import java.io.*;
+
+public class Solution{
+public static void main(String[] args){
+Scanner input = new Scanner(System.in);
+String a = input.nextLine();
+String b = input.nextLine();
+input.close();
+
+System.out.println(isanagram(a , b) ? "Anagrams" : "Not Anagrams");
+}
+public static boolean isanagram(String a, String b){
+if(a.length() != b.length())
+  return false;
+
+String a1 = a.toLowerCase();
+String b1 = b.toLowerCase();
+
+HashMap<Character,Integer> map1 = new HashMap<Character , Integer>();
+HashMap<Character , Integer> map2 = new HashMap<Character , Integer>();
+Set<Character>keys = new HashSet<Character>();
+
+char c;
+char d;
+
+for (int i=0 ; i<a1.length() ; i++){
+  c = a1.charAt(i);
+  d = b1.charAt(i);
+  map1.put(c, map1.containsKey(c) ? map1.get(c) + 1: 1);
+  map2.put(d, map2.containsKey(d) ? map2.get(d) +1 : 1); 
+  keys.add(c);
+}
+
+for (int i=0 ; i<b1.length() ; i++){
+if(!keys.contains(b1.charAt(i)))
+  return false;
+}
+for (Character C : keys){
+  if (!map2.containsKey(C))
+    return false;
+  if (map1.get(C) != map2.get(C))
+    return false;
+  
+}
+return true;
+} 
+}
