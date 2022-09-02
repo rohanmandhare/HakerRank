@@ -4,14 +4,16 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
+        
         Scanner scan = new Scanner(System.in);
         String s = scan.nextLine();
-        String[] arr = s.split("[!,?._'@ ]+");
-        System.out.println(arr.length);
-        for(int i = 0; i < arr.length; i++)
+        StringTokenizer str = new StringTokenizer(s, " ,!,?,.,_,',@");
+        System.out.println(str.countTokens());
+        while(str.hasMoreTokens())
         {
-            System.out.println(arr[i]);
-        }
-        scan.close();
+            System.out.println(str.nextToken());
+    }
+    scan.close();
+
     }
 }
